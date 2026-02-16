@@ -71,6 +71,7 @@ setup(
         "docs": [
             "sphinx",
             "sphinxawesome-theme",
+            "zensical"
         ],
     },
     classifiers=[

@@ -1,0 +1,102 @@
+site_name: Dictrack
+site_description: A comprehensive tracking and limiting library.
+site_url: https://bonislolz.github.io/dictrack/
+
+repo_name: Bonislolz/dictrack
+repo_url: https://github.com/Bonislolz/dictrack
+edit_uri: edit/main/docs/
+
+strict: true
+
+theme:
+  name: "material"
+  custom_dir: docs/overrides
+  palette:
+    - scheme: "default"
+      media: "(prefers-color-scheme: light)"
+      toggle:
+        icon: "material/lightbulb"
+        name: "Switch to dark mode"
+    - scheme: "slate"
+      media: "(prefers-color-scheme: dark)"
+      primary: "blue"
+      toggle:
+        icon: "material/lightbulb-outline"
+        name: "Switch to light mode"
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - content.code.copy
+    - toc.follow
+
+nav:
+  - Introduction: "index.md"
+  - API Reference:
+    - Manager: "api/manager.md"
+    - Events: "api/events.md"
+    - Conditions:
+        - Base: "api/conditions/base.md"
+        - Keys: "api/conditions/keys.md"
+    - Data Caches:
+        - Base: "api/data_caches/base.md"
+        - Memory: "api/data_caches/memory.md"
+        - Redis: "api/data_caches/redis.md"
+    - Data Stores:
+        - Base: "api/data_stores/base.md"
+        - MongoDB: "api/data_stores/mongodb.md"
+    - Limiters:
+        - Base: "api/limiters/base.md"
+        - Count: "api/limiters/count.md"
+        - Time: "api/limiters/time.md"
+    - Trackers:
+        - Base: "api/trackers/base.md"
+        - Numerics:
+            - Accumulation: "api/trackers/numerics/accumulation.md"
+            - Count: "api/trackers/numerics/count.md"
+            - Numeric: "api/trackers/numerics/numeric.md"
+    - Utils:
+        - Errors: "api/utils/errors.md"
+        - Logger: "api/utils/logger.md"
+        - Utils: "api/utils/utils.md"
+
+extra_css:
+  - css/custom.css
+
+extra_javascript:
+  - js/custom.js
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+watch:
+  - app/dictrack
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [app]
+          options:
+            docstring_section_style: list
+            show_root_toc_entry: false
+            members_order: source
+            separate_signature: true
+            filters: ["!^_"]
+            docstring_options:
+              ignore_init_summary: true
+            merge_init_into_class: true
+            parameter_headings: true
+            show_signature_annotations: true
+            show_source: false
+            signature_crossrefs: true
+          inventories:
+            - url: https://docs.python.org/3/objects.inv
