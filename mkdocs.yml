@@ -31,6 +31,9 @@ theme:
 
 nav:
   - Introduction: "index.md"
+  - Getting Started: "getting-started.md"
+  - Advanced Usage: "advanced-usage.md"
+  - Examples: "examples.md"
   - API Reference:
     - Manager: "api/manager.md"
     - Events: "api/events.md"
