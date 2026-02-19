@@ -79,33 +79,12 @@ print(manager.get_trackers(group_id=group_id, name="Demo-1"))
 
 ## Use Cases
 
-<div class="grid cards" markdown>
-
--   ### Condition-Based Monitoring
-    
-    Track data that meets specific conditions like key existence, value comparisons, or custom rules.
-
--   ### Rate Limiting
-    
-    Implement rate limiting for APIs or services using `CountLimiter` and `TimeLimiter`.
-
--   ### Multi-Stage Campaigns
-    
-    Track progress through multiple stages with multi-target support and milestone events.
-
--   ### IoT Device Monitoring
-    
-    Monitor device metrics and trigger alerts when thresholds are exceeded.
-
--   ### Session Analytics
-    
-    Track user session data including page views, purchases, and accumulated values.
-
--   ### Task Queue Management
-    
-    Manage and monitor task queues across multiple workers or robots.
-
-</div>
+- **Condition-Based Monitoring** — Track data that meets specific conditions like key existence, value comparisons, or custom rules.
+- **Rate Limiting** — Implement rate limiting for APIs or services using `CountLimiter` and `TimeLimiter`.
+- **Multi-Stage Campaigns** — Track progress through multiple stages with multi-target support and milestone events.
+- **IoT Device Monitoring** — Monitor device metrics and trigger alerts when thresholds are exceeded.
+- **Session Analytics** — Track user session data including page views, purchases, and accumulated values.
+- **Task Queue Management** — Manage and monitor task queues across multiple workers or robots.
 
 ---
 
@@ -113,13 +92,9 @@ print(manager.get_trackers(group_id=group_id, name="Demo-1"))
 
 `dictrack` is commonly used with:
 
-<div class="grid cards" markdown>
-
--   **[Redis](https://redis.io/)** — In-memory data cache for fast access
--   **[MongoDB](https://www.mongodb.com/)** — Persistent data storage
--   **[FastAPI](https://fastapi.tiangolo.com/)** — Build APIs that integrate with dictrack
-
-</div>
+- **[Redis](https://redis.io/)** — In-memory data cache for fast access
+- **[MongoDB](https://www.mongodb.com/)** — Persistent data storage
+- **[FastAPI](https://fastapi.tiangolo.com/)** — Build APIs that integrate with dictrack
 
 ---
 
