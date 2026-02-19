@@ -21,7 +21,7 @@ jobs:
           python-version: 3.x
       - run: pip install zensical
       - run: pip install mkdocs-material mkdocstrings mkdocstrings-python
-      - run: zensical build --clean
+      - run: zensical build -f mkdocs.yml --clean
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site
