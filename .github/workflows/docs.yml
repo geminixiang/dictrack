@@ -19,9 +19,7 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
       - run: uv sync --dev
-      - run: zensical build -f mkdocs.yml --clean
-        env:
-          RUST_BACKTRACE: 1
+      - run: uv run zensical build -f mkdocs.yml --clean
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site
