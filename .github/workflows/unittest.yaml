@@ -35,7 +35,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        uv sync --extra redis --extra memory --extra mongodb
+        uv sync --extra redis --extra memory --extra mongodb --group test
 
     - name: Test with pytest
       run: |
