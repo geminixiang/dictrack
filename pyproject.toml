@@ -4,7 +4,7 @@ version = "2.1.5"
 description = "A Flexible Dictionary Data Tracker for Condition-Based Monitoring"
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 authors = [
     {name = "Tim Liao", email = "bonis0324work@gmail.com"},
 ]
@@ -12,7 +12,6 @@ classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -53,7 +52,7 @@ Homepage = "https://github.com/bons0324/dictrack"
 
 [dependency-groups]
 dev = [
-    'mkdocs-material>=9.7.1; python_version >= "3.8"',
+    "mkdocs-material>=9.7.1",
     'mkdocstrings>=1.0.0; python_version >= "3.10"',
     'mkdocstrings-python>=2.0.1; python_version >= "3.10"',
     'zensical>=0.0.15; python_version >= "3.10"',
