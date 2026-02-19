@@ -10,9 +10,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-py27:
-    runs-on: ubuntu-24.04
-    container: python:2.7
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12']
     services:
       redis:
         image: redis:6.2
@@ -24,38 +26,17 @@ jobs:
           - 27017:27017
     steps:
     - uses: actions/checkout@v4
-    
-    - name: Install dependencies
-      run: |
-        pip install --upgrade pip
-        pip install "pytest<5" mock pytest-cov
-        pip install .[redis,memory,mongodb]
-        
-    - name: Test with pytest
-      run: |
-        python -m pytest app/
 
-  test-py38:
-    runs-on: ubuntu-24.04
-    container: python:3.8
-    services:
-      redis:
-        image: redis:6.2
-        ports:
-          - 6379:6379
-      mongodb:
-        image: mongo:5.0
-        ports:
-          - 27017:27017
-    steps:
-    - uses: actions/checkout@v4
-    
+    - name: Install uv
+      uses: astral-sh/setup-uv@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      run: uv python install ${{ matrix.python-version }}
+
     - name: Install dependencies
       run: |
-        pip install --upgrade pip
-        pip install pytest pytest-cov
-        pip install .[redis,memory,mongodb]
-        
+        uv sync --extra redis --extra memory --extra mongodb
+
     - name: Test with pytest
       run: |
-        python -m pytest app/
+        uv run pytest app/
